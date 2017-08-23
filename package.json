@@ -1,0 +1,32 @@
+{
+  "name": "scrapenews",
+  "version": "1.0.0",
+  "description": "interactive up to date news scraper",
+  "main": "index.js",
+  "scripts": {
+    "test": "run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apekearo/mongooseNewsScrape.git"
+  },
+  "keywords": [
+    "mongoose",
+    "cheerio",
+    "scrape"
+  ],
+  "author": "Anthony Pekearo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apekearo/mongooseNewsScrape/issues"
+  },
+  "homepage": "https://github.com/apekearo/mongooseNewsScrape#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^4.11.7",
+    "request": "^2.81.0"
+  }
+}
