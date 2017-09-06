@@ -2,7 +2,7 @@
   "name": "scrapenews",
   "version": "1.0.0",
   "description": "interactive up to date news scraper",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "run dev"
   },
@@ -27,6 +27,7 @@
     "express": "^4.15.4",
     "express-handlebars": "^3.0.0",
     "mongoose": "^4.11.7",
+    "morgan": "^1.8.2",
     "request": "^2.81.0"
   }
 }
