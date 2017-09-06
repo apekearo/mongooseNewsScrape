@@ -31,7 +31,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://localhost/scrapeHomework");
+mongoose.connect("mongodb://heroku_94d37rm8:o15dcl1f942hegeu7oghbmf0jn@ds017726.mlab.com:17726/heroku_94d37rm8");
 var db = mongoose.connection;
 // mongodb://heroku_94d37rm8:o15dcl1f942hegeu7oghbmf0jn@ds017726.mlab.com:17726/heroku_94d37rm8
 // Show any mongoose errors
@@ -40,7 +40,7 @@ db.on("error", function(error) {
 });
 
 // Once logged in to the db through mongoose, log a success message
-db.once("openUri", function() {
+db.once("open", function() {
   console.log("Mongoose connection successful.");
 });
 
