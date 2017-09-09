@@ -72,7 +72,7 @@ console.log(element);
 console.log(entry);
 
       // Now, save that entry to the db
-      entry.create(function(err, doc) {
+      entry.save(function(err, doc) {
         // Log any errors
         if (err) {
           console.log(err);
