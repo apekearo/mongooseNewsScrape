@@ -44,6 +44,19 @@ db.once("open", function() {
   console.log("Mongoose connection successful.");
 });
 
+//make a new article to see if it will work and debug
+var entry = new Article({link: 'https://www.google.com',
+                          title: 'google'});
+entry.create(function(err, doc) {
+        // Log any errors
+        if (err) {
+          console.log(err);
+        }
+        // Or log the doc
+        else {
+          console.log(doc);
+        }
+      });
 
 // Routes
 // ======
@@ -67,6 +80,8 @@ console.log(element);
       // Using our Article model, create a new entry
       // This effectively passes the result object to the entry (and the title and link)
       var entry = new Article(result);
+      // testing the entry var
+console.log(entry);
 
       // Now, save that entry to the db
       entry.create(function(err, doc) {
