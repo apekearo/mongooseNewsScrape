@@ -31,7 +31,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://heroku_94d37rm8:o15dcl1f942hegeu7oghbmf0jn@ds017726.mlab.com:17726/heroku_94d37rm8");
+mongoose.connect("mongodb://osei:osei12@ds017726.mlab.com:17726/heroku_94d37rm8");
 var db = mongoose.connection;
 // mongodb://heroku_94d37rm8:o15dcl1f942hegeu7oghbmf0jn@ds017726.mlab.com:17726/heroku_94d37rm8
 // Show any mongoose errors
@@ -44,20 +44,7 @@ db.once("open", function() {
   console.log("Mongoose connection successful.");
 });
 
-//make a new article to see if it will work and debug
-var entry = new Article({link: 'https://www.google.com',
-                          title: 'google'});
-console.log(entry);
-entry.create(function(err, doc) {
-        // Log any errors
-        if (err) {
-          console.log(err);
-        }
-        // Or log the doc
-        else {
-          console.log(doc);
-        }
-      });
+
 
 // Routes
 // ======
