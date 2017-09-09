@@ -47,6 +47,7 @@ db.once("open", function() {
 //make a new article to see if it will work and debug
 var entry = new Article({link: 'https://www.google.com',
                           title: 'google'});
+console.log(entry);
 entry.create(function(err, doc) {
         // Log any errors
         if (err) {
