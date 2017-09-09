@@ -69,7 +69,7 @@ console.log(element);
       var entry = new Article(result);
 
       // Now, save that entry to the db
-      entry.save(function(err, doc) {
+      entry.create(function(err, doc) {
         // Log any errors
         if (err) {
           console.log(err);
