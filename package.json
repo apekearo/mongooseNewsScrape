@@ -1,33 +1,19 @@
 {
-  "name": "scrapenews",
+  "name": "mongo_homework",
   "version": "1.0.0",
-  "description": "interactive up to date news scraper",
+  "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "run dev"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/apekearo/mongooseNewsScrape.git"
-  },
-  "keywords": [
-    "mongoose",
-    "cheerio",
-    "scrape"
-  ],
-  "author": "Anthony Pekearo",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/apekearo/mongooseNewsScrape/issues"
-  },
-  "homepage": "https://github.com/apekearo/mongooseNewsScrape#readme",
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.17.2",
-    "cheerio": "^1.0.0-rc.2",
-    "express": "^4.15.4",
+    "body-parser": "^1.15.0",
+    "cheerio": "^0.20.0",
+    "express": "^4.13.4",
     "express-handlebars": "^3.0.0",
-    "mongoose": "^4.11.7",
-    "morgan": "^1.8.2",
-    "request": "^2.81.0"
+    "mongoose": "^4.4.6",
+    "request": "^2.69.0"
   }
 }
