@@ -1,6 +1,4 @@
-// Web Scraper Homework Solution Example
-// (be sure to watch the video to see
-// how to operate the site in the browser)
+// Web Scraper Mongoose
 // -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
 
 // Require our dependencies
@@ -49,7 +47,7 @@ mongoose.connect(db, function(error) {
     console.log(error);
   }
   // Or log a success message
-  else {
+  else {,
     console.log("mongoose connection is successful");
   }
 });
