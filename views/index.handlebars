@@ -1,0 +1,32 @@
+<header>
+	<h1>Hacker Notes</h1>
+	<p id="description">Write and save notes from Hacker News articles</p>
+	<button type="submit" id="scrape">Scrape Articles!</button>
+</header>
+
+<div class="container">
+
+	<div class="row">
+		<div class="col-md-8 articleList h-100 d-inline-block">
+			<h2>Articles:</h2>
+			<ul>
+				{{#each article}}
+					<li data-id="{{this.id}}">
+						<p>{{this.title}}</p>
+						<a href="{{this.link}}">{{this.link}}</a>
+					</li>
+				{{/each}}
+			</ul>
+		</div>
+		<div class="col-md-4">
+			<h2>Notes: </h2>
+			<h3 id="articleTitle"></h3>
+				<div class="note">
+					<input id="titleInput" name="title" placeholder="Title of Note">
+					<textarea id="bodyInput" name="body" placeholder="Note Body"></textarea>
+					<button type="submit" id="saveNote">Save Note</button>
+				</div>
+		</div>
+
+	</div>
+</div>

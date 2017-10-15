@@ -1,58 +1,42 @@
-// Web Scraper Mongoose
-// -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/
-
-// Require our dependencies
 var express = require("express");
-var mongoose = require("mongoose");
-var expressHandlebars = require("express-handlebars");
 var bodyParser = require("body-parser");
+var mongoose = require("mongoose");
+var methodOverride = require("method-override");
+var request = require("request");
+var cheerio = require("cheerio");
 
-// Set up our port to be either the host's designated port, or 3000
-var PORT = process.env.PORT || 3000;
-
-// Instantiate our Express App
 var app = express();
+var port = process.env.PORT || 3000;
 
-// Set up an Express Router
-var router = express.Router();
+app.use(express.static("public"));
 
-// Require our routes file pass our router object
-require("./config/routes")(router);
+// Parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
 
-// Designate our public folder as a static directory
-app.use(express.static(__dirname + "/public"));
+// Override with POST having ?_method=DELETE
+app.use(methodOverride("_method"));
+var exphbs = require("express-handlebars");
 
-// Connect Handlebars to our Express app
-app.engine("handlebars", expressHandlebars({
-  defaultLayout: "main"
-}));
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-// Use bodyParser in our app
-app.use(bodyParser.urlencoded({
-  extended: false
-}));
+// Database configuration with mongoose
+mongoose.connect("mongodb://heroku_whb218m9:d61iad37fpsla6tpuaosh1o5sv@ds127429.mlab.com:27429/heroku_whb218m9");
+var db = mongoose.connection;
 
-// Have every request go through our router middleware
-app.use(router);
-
-
-// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-var db = process.env.MONGODB_URI || "mongodb://osei:osei12@ds017726.mlab.com:17726/heroku_94d37rm8";
-
-// Connect mongoose to our database
-mongoose.connect(db, function(error) {
-  // Log any errors connecting with mongoose
-  if (error) {
-    console.log(error);
-  }
-  // Or log a success message
-  else {,
-    console.log("mongoose connection is successful");
-  }
+// Show any mongoose errors
+db.on("error", function(error) {
+  console.log("Mongoose Error: ", error);
 });
 
-// Listen on the port
-app.listen(PORT, function() {
-  console.log("Listening on port:" + PORT);
+// Once logged in to the db through mongoose, log a success message
+db.once("open", function() {
+  console.log("Mongoose connection successful.");
+});
+
+require("./routes/api-routes.js")(app);
+
+// Listen on port 3000
+app.listen(port, function() {
+  console.log("App running on port: "+port);
 });

@@ -1,19 +1,30 @@
 {
-  "name": "mongo_homework",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.15.0",
-    "cheerio": "^0.20.0",
-    "express": "^4.13.4",
-    "express-handlebars": "^3.0.0",
-    "mongoose": "^4.4.6",
-    "request": "^2.69.0"
-  }
+"name": "article-scrape",
+"version": "1.0.0",
+"description": "scrape articles from a website and allow users to leave a note on the articles",
+"main": "server.js",
+"scripts": {
+"test": "test",
+"start": "node server.js"
+},
+"repository": {
+"type": "git",
+"url": "git+https://github.com/marissapels/scrapeMoreArticles.git"
+},
+"author": "Marissa Pels",
+"license": "ISC",
+"bugs": {
+"url": "https://github.com/marissapels/scrapeMoreArticles/issues"
+},
+"homepage": "https://github.com/marissapels/scrapeMoreArticles#readme",
+"dependencies": {
+"body-parser": "^1.17.2",
+"cheerio": "^1.0.0-rc.2",
+"express": "^4.15.4",
+"express-handlebars": "^3.0.0",
+"method-override": "^2.3.9",
+"mongoose": "^4.11.7",
+"nodemon": "^1.11.0",
+"request": "^2.81.0"
+}
 }

@@ -1,0 +1,66 @@
+header {
+    text-align:center;
+    margin: 0px auto;
+    padding: 10px;
+    background: #9badcc;
+    border-bottom: lightgrey solid 5px;
+}
+#description {
+    color:white;
+    font-style:italic;
+}
+
+h1 {
+    margin-top:0px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.4em;
+}
+
+h2 {
+    font-weight: bold;
+}
+.container {
+    width: 98%;
+}
+.articleList{
+	display: inline-block;
+	overflow:auto;
+	height:700px;
+}
+
+.note {
+    margin-top: 8%;
+}
+
+#saveNote {
+    display: block;
+    margin: 10px auto;
+}
+
+#bodyInput {
+    height: 200px;
+}
+
+#titleInput, #bodyInput {
+    display: block;
+    margin: 10px auto;
+    width: 80%;
+}
+
+p:hover {
+    cursor: pointer;
+}
+
+li {
+    margin: 10px 10px 10px 0px;
+    list-style: none;
+}
+
+p {
+    margin: 0px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
